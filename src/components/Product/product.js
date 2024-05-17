@@ -15,7 +15,7 @@ const Product = ({ item }) => {
         dispatch(ProductAction.add(additems));
 
         const token = localStorage.getItem('jwtToken');
-        const id = localStorage.setItem('userId');
+        const id = localStorage.getItem('userId');
 
         const postData = async () => {
             try {

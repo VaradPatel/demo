@@ -6,10 +6,11 @@ import { Provider } from 'react-redux';
 import store from './components/redux/index.js'; // Correct path to the store
 import Home from './components/home/home.js';
 import Product from './components/Product/product.js';
+import Headers from './components/headers/headers.js';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/login',
     element: <Login />
   },
   {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
+    <Headers/>
       <RouterProvider router={router} />
+      
     </Provider>
   );
 }
