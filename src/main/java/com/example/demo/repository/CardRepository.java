@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface CardRepository extends JpaRepository<Card, Long> {
 
-    Card findByUserId(Long aLong);
+    Card findByUserId(Long id);
 
 
     void save(Optional<Card> card);

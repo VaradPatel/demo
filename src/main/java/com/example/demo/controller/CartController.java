@@ -45,10 +45,19 @@ public class CartController {
        try {
 
                 Card card = cardRepository.findByUserId(id);
+
+
+
                 ResponseGetCart responseGetCart=new ResponseGetCart();
+                if(card==null)
+                {
+                    return ResponseEntity.ok(responseGetCart);
+                }
            List<ProductResponse>productResponseList=new ArrayList<>();
 //                responseGetCart.setProducts(card.getProducts());
-                responseGetCart.setTotalQuantity(card.getTotalQuantity());
+
+               responseGetCart.setTotalQuantity(card.getTotalQuantity());
+
                 for(Products product:card.getProducts())
                 {
                     ProductResponse productResponse=new ProductResponse();

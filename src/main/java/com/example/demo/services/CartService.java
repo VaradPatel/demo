@@ -7,6 +7,7 @@ import com.example.demo.entities.User;
 import com.example.demo.repository.CardRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
@@ -19,6 +20,7 @@ public class CartService {
     CardRepository cardRepository;
     @Autowired
     UserRepository userRepository;
+    @Async
     public void addToCart(RequestAddToCard requestAddToCard, Long userId)
     {
         System.out.println(requestAddToCard.getTotalQuantity());
